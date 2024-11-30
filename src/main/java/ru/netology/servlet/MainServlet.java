@@ -3,7 +3,6 @@ package ru.netology.servlet;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import ru.netology.controller.PostController;
-import ru.netology.javaConfiq.JavaConfiq;
 import ru.netology.repository.PostRepository;
 import ru.netology.service.PostService;
 
@@ -14,11 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 public class MainServlet extends HttpServlet {
   private PostController controller;
 
-  @Override
-  public void init() {
-    ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfiq.class);
-    controller = context.getBean(PostController.class);
-  }
+
 
   @Override
   protected void service(HttpServletRequest req, HttpServletResponse resp) {
